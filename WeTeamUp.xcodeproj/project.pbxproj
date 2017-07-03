@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C4561DFB1F0AE5020037CB1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561DFA1F0AE5020037CB1C /* AppDelegate.swift */; };
+		C4561DFD1F0AE5020037CB1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561DFC1F0AE5020037CB1C /* ViewController.swift */; };
+		C4561E001F0AE5020037CB1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4561DFE1F0AE5020037CB1C /* Main.storyboard */; };
+		C4561E031F0AE5020037CB1C /* WeTeamUp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4561E011F0AE5020037CB1C /* WeTeamUp.xcdatamodeld */; };
+		C4561E051F0AE5020037CB1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4561E041F0AE5020037CB1C /* Assets.xcassets */; };
+		C4561E081F0AE5020037CB1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4561E061F0AE5020037CB1C /* LaunchScreen.storyboard */; };
+		C4561E131F0AE5020037CB1C /* WeTeamUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561E121F0AE5020037CB1C /* WeTeamUpTests.swift */; };
+		C4561E1E1F0AE5020037CB1C /* WeTeamUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561E1D1F0AE5020037CB1C /* WeTeamUpUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4561E0F1F0AE5020037CB1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4561DEF1F0AE5020037CB1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4561DF61F0AE5020037CB1C;
+			remoteInfo = WeTeamUp;
+		};
+		C4561E1A1F0AE5020037CB1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4561DEF1F0AE5020037CB1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4561DF61F0AE5020037CB1C;
+			remoteInfo = WeTeamUp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C4561DF71F0AE5020037CB1C /* WeTeamUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTeamUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4561DFA1F0AE5020037CB1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C4561DFC1F0AE5020037CB1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C4561DFF1F0AE5020037CB1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C4561E021F0AE5020037CB1C /* WeTeamUp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeTeamUp.xcdatamodel; sourceTree = "<group>"; };
+		C4561E041F0AE5020037CB1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4561E071F0AE5020037CB1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C4561E091F0AE5020037CB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4561E0E1F0AE5020037CB1C /* WeTeamUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeTeamUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4561E121F0AE5020037CB1C /* WeTeamUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeTeamUpTests.swift; sourceTree = "<group>"; };
+		C4561E141F0AE5020037CB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4561E191F0AE5020037CB1C /* WeTeamUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeTeamUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4561E1D1F0AE5020037CB1C /* WeTeamUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeTeamUpUITests.swift; sourceTree = "<group>"; };
+		C4561E1F1F0AE5020037CB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4561DF41F0AE5020037CB1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4561E0B1F0AE5020037CB1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4561E161F0AE5020037CB1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4561DEE1F0AE5020037CB1C = {
+			isa = PBXGroup;
+			children = (
+				C4561DF91F0AE5020037CB1C /* WeTeamUp */,
+				C4561E111F0AE5020037CB1C /* WeTeamUpTests */,
+				C4561E1C1F0AE5020037CB1C /* WeTeamUpUITests */,
+				C4561DF81F0AE5020037CB1C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4561DF81F0AE5020037CB1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4561DF71F0AE5020037CB1C /* WeTeamUp.app */,
+				C4561E0E1F0AE5020037CB1C /* WeTeamUpTests.xctest */,
+				C4561E191F0AE5020037CB1C /* WeTeamUpUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4561DF91F0AE5020037CB1C /* WeTeamUp */ = {
+			isa = PBXGroup;
+			children = (
+				C4561DFA1F0AE5020037CB1C /* AppDelegate.swift */,
+				C4561DFC1F0AE5020037CB1C /* ViewController.swift */,
+				C4561DFE1F0AE5020037CB1C /* Main.storyboard */,
+				C4561E041F0AE5020037CB1C /* Assets.xcassets */,
+				C4561E061F0AE5020037CB1C /* LaunchScreen.storyboard */,
+				C4561E091F0AE5020037CB1C /* Info.plist */,
+				C4561E011F0AE5020037CB1C /* WeTeamUp.xcdatamodeld */,
+			);
+			path = WeTeamUp;
+			sourceTree = "<group>";
+		};
+		C4561E111F0AE5020037CB1C /* WeTeamUpTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4561E121F0AE5020037CB1C /* WeTeamUpTests.swift */,
+				C4561E141F0AE5020037CB1C /* Info.plist */,
+			);
+			path = WeTeamUpTests;
+			sourceTree = "<group>";
+		};
+		C4561E1C1F0AE5020037CB1C /* WeTeamUpUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C4561E1D1F0AE5020037CB1C /* WeTeamUpUITests.swift */,
+				C4561E1F1F0AE5020037CB1C /* Info.plist */,
+			);
+			path = WeTeamUpUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4561DF61F0AE5020037CB1C /* WeTeamUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4561E221F0AE5020037CB1C /* Build configuration list for PBXNativeTarget "WeTeamUp" */;
+			buildPhases = (
+				C4561DF31F0AE5020037CB1C /* Sources */,
+				C4561DF41F0AE5020037CB1C /* Frameworks */,
+				C4561DF51F0AE5020037CB1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeTeamUp;
+			productName = WeTeamUp;
+			productReference = C4561DF71F0AE5020037CB1C /* WeTeamUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C4561E0D1F0AE5020037CB1C /* WeTeamUpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4561E251F0AE5020037CB1C /* Build configuration list for PBXNativeTarget "WeTeamUpTests" */;
+			buildPhases = (
+				C4561E0A1F0AE5020037CB1C /* Sources */,
+				C4561E0B1F0AE5020037CB1C /* Frameworks */,
+				C4561E0C1F0AE5020037CB1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4561E101F0AE5020037CB1C /* PBXTargetDependency */,
+			);
+			name = WeTeamUpTests;
+			productName = WeTeamUpTests;
+			productReference = C4561E0E1F0AE5020037CB1C /* WeTeamUpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C4561E181F0AE5020037CB1C /* WeTeamUpUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4561E281F0AE5020037CB1C /* Build configuration list for PBXNativeTarget "WeTeamUpUITests" */;
+			buildPhases = (
+				C4561E151F0AE5020037CB1C /* Sources */,
+				C4561E161F0AE5020037CB1C /* Frameworks */,
+				C4561E171F0AE5020037CB1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4561E1B1F0AE5020037CB1C /* PBXTargetDependency */,
+			);
+			name = WeTeamUpUITests;
+			productName = WeTeamUpUITests;
+			productReference = C4561E191F0AE5020037CB1C /* WeTeamUpUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4561DEF1F0AE5020037CB1C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Daniel Ayala";
+				TargetAttributes = {
+					C4561DF61F0AE5020037CB1C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 3WN2HPYHZR;
+						ProvisioningStyle = Automatic;
+					};
+					C4561E0D1F0AE5020037CB1C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 3WN2HPYHZR;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C4561DF61F0AE5020037CB1C;
+					};
+					C4561E181F0AE5020037CB1C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 3WN2HPYHZR;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C4561DF61F0AE5020037CB1C;
+					};
+				};
+			};
+			buildConfigurationList = C4561DF21F0AE5020037CB1C /* Build configuration list for PBXProject "WeTeamUp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4561DEE1F0AE5020037CB1C;
+			productRefGroup = C4561DF81F0AE5020037CB1C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4561DF61F0AE5020037CB1C /* WeTeamUp */,
+				C4561E0D1F0AE5020037CB1C /* WeTeamUpTests */,
+				C4561E181F0AE5020037CB1C /* WeTeamUpUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4561DF51F0AE5020037CB1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4561E081F0AE5020037CB1C /* LaunchScreen.storyboard in Resources */,
+				C4561E051F0AE5020037CB1C /* Assets.xcassets in Resources */,
+				C4561E001F0AE5020037CB1C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4561E0C1F0AE5020037CB1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4561E171F0AE5020037CB1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4561DF31F0AE5020037CB1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4561E031F0AE5020037CB1C /* WeTeamUp.xcdatamodeld in Sources */,
+				C4561DFD1F0AE5020037CB1C /* ViewController.swift in Sources */,
+				C4561DFB1F0AE5020037CB1C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4561E0A1F0AE5020037CB1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4561E131F0AE5020037CB1C /* WeTeamUpTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4561E151F0AE5020037CB1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4561E1E1F0AE5020037CB1C /* WeTeamUpUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4561E101F0AE5020037CB1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4561DF61F0AE5020037CB1C /* WeTeamUp */;
+			targetProxy = C4561E0F1F0AE5020037CB1C /* PBXContainerItemProxy */;
+		};
+		C4561E1B1F0AE5020037CB1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4561DF61F0AE5020037CB1C /* WeTeamUp */;
+			targetProxy = C4561E1A1F0AE5020037CB1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C4561DFE1F0AE5020037CB1C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4561DFF1F0AE5020037CB1C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C4561E061F0AE5020037CB1C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4561E071F0AE5020037CB1C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C4561E201F0AE5020037CB1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C4561E211F0AE5020037CB1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C4561E231F0AE5020037CB1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3WN2HPYHZR;
+				INFOPLIST_FILE = WeTeamUp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imediayala.WeTeamUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C4561E241F0AE5020037CB1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3WN2HPYHZR;
+				INFOPLIST_FILE = WeTeamUp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imediayala.WeTeamUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C4561E261F0AE5020037CB1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3WN2HPYHZR;
+				INFOPLIST_FILE = WeTeamUpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imediayala.WeTeamUpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeTeamUp.app/WeTeamUp";
+			};
+			name = Debug;
+		};
+		C4561E271F0AE5020037CB1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3WN2HPYHZR;
+				INFOPLIST_FILE = WeTeamUpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imediayala.WeTeamUpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeTeamUp.app/WeTeamUp";
+			};
+			name = Release;
+		};
+		C4561E291F0AE5020037CB1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3WN2HPYHZR;
+				INFOPLIST_FILE = WeTeamUpUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imediayala.WeTeamUpUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WeTeamUp;
+			};
+			name = Debug;
+		};
+		C4561E2A1F0AE5020037CB1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3WN2HPYHZR;
+				INFOPLIST_FILE = WeTeamUpUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imediayala.WeTeamUpUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WeTeamUp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4561DF21F0AE5020037CB1C /* Build configuration list for PBXProject "WeTeamUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4561E201F0AE5020037CB1C /* Debug */,
+				C4561E211F0AE5020037CB1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4561E221F0AE5020037CB1C /* Build configuration list for PBXNativeTarget "WeTeamUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4561E231F0AE5020037CB1C /* Debug */,
+				C4561E241F0AE5020037CB1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C4561E251F0AE5020037CB1C /* Build configuration list for PBXNativeTarget "WeTeamUpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4561E261F0AE5020037CB1C /* Debug */,
+				C4561E271F0AE5020037CB1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C4561E281F0AE5020037CB1C /* Build configuration list for PBXNativeTarget "WeTeamUpUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4561E291F0AE5020037CB1C /* Debug */,
+				C4561E2A1F0AE5020037CB1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C4561E011F0AE5020037CB1C /* WeTeamUp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C4561E021F0AE5020037CB1C /* WeTeamUp.xcdatamodel */,
+			);
+			currentVersion = C4561E021F0AE5020037CB1C /* WeTeamUp.xcdatamodel */;
+			path = WeTeamUp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C4561DEF1F0AE5020037CB1C /* Project object */;
+}
