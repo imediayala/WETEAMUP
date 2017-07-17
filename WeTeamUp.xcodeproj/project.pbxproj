@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40AC7E11F1D3F9600C80277 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40AC7E01F1D3F9600C80277 /* LoginViewController.swift */; };
+		C40AC7E31F1D423200C80277 /* TeamHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40AC7E21F1D423200C80277 /* TeamHomeViewController.swift */; };
 		C4561DFB1F0AE5020037CB1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561DFA1F0AE5020037CB1C /* AppDelegate.swift */; };
 		C4561DFD1F0AE5020037CB1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561DFC1F0AE5020037CB1C /* ViewController.swift */; };
 		C4561E001F0AE5020037CB1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4561DFE1F0AE5020037CB1C /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C40AC7E01F1D3F9600C80277 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C40AC7E21F1D423200C80277 /* TeamHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamHomeViewController.swift; sourceTree = "<group>"; };
 		C4561DF71F0AE5020037CB1C /* WeTeamUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTeamUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4561DFA1F0AE5020037CB1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4561DFC1F0AE5020037CB1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			children = (
 				C4561DFA1F0AE5020037CB1C /* AppDelegate.swift */,
 				C4561DFC1F0AE5020037CB1C /* ViewController.swift */,
+				C40AC7E01F1D3F9600C80277 /* LoginViewController.swift */,
+				C40AC7E21F1D423200C80277 /* TeamHomeViewController.swift */,
 				C4561DFE1F0AE5020037CB1C /* Main.storyboard */,
 				C4561E041F0AE5020037CB1C /* Assets.xcassets */,
 				C4561E061F0AE5020037CB1C /* LaunchScreen.storyboard */,
@@ -265,6 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40AC7E11F1D3F9600C80277 /* LoginViewController.swift in Sources */,
+				C40AC7E31F1D423200C80277 /* TeamHomeViewController.swift in Sources */,
 				C4561E031F0AE5020037CB1C /* WeTeamUp.xcdatamodeld in Sources */,
 				C4561DFD1F0AE5020037CB1C /* ViewController.swift in Sources */,
 				C4561DFB1F0AE5020037CB1C /* AppDelegate.swift in Sources */,
@@ -520,6 +528,7 @@
 				C4561E241F0AE5020037CB1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4561E251F0AE5020037CB1C /* Build configuration list for PBXNativeTarget "WeTeamUpTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +537,7 @@
 				C4561E271F0AE5020037CB1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4561E281F0AE5020037CB1C /* Build configuration list for PBXNativeTarget "WeTeamUpUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +546,7 @@
 				C4561E2A1F0AE5020037CB1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
