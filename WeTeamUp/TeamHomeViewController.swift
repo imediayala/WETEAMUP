@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FacebookCore
 
 class TeamHomeViewController: UIViewController {
     @IBOutlet weak var objFromLogin: UILabel!
@@ -14,10 +16,11 @@ class TeamHomeViewController: UIViewController {
 
 
     override func viewDidLoad() {
-        super.viewDidLoad(
+        super.viewDidLoad()
         
-        )
-       
+        if AccessToken.current != nil {
+            // User is logged in, use 'accessToken' here.
+        }
     // Do any additional setup after loading the view.
         
         objFromLogin.text = stringLogin
