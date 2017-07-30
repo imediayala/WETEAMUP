@@ -13,9 +13,6 @@ import FacebookLogin
 import FBSDKLoginKit
 import FBSDKCoreKit
 
-
-
-
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     // THIS IS HOW PROPERTIES ARE DECLARED
@@ -80,13 +77,29 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
             {
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    if error != nil {
+                        // ...
+                        return
+                    }
+                    // User is signed in
+                    // ...
+                    print("GOT ACCES TOKEN")
+                    self.performSegue(withIdentifier: "goHome", sender: nil)
+
+                }
+        
+            
                 // Do work
                 
-                performSegue(withIdentifier: "goHome", sender: nil)
                 
             }
         }
     }
+    
+    
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("User Logged Out")
