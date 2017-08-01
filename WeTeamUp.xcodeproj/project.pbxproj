@@ -35,6 +35,12 @@
 		C4561E081F0AE5020037CB1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4561E061F0AE5020037CB1C /* LaunchScreen.storyboard */; };
 		C4561E131F0AE5020037CB1C /* WeTeamUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561E121F0AE5020037CB1C /* WeTeamUpTests.swift */; };
 		C4561E1E1F0AE5020037CB1C /* WeTeamUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561E1D1F0AE5020037CB1C /* WeTeamUpUITests.swift */; };
+		C4DBDBB81F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DBDBB61F310E00001348F0 /* HomeCardsCollectionViewCell.swift */; };
+		C4DBDBB91F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DBDBB61F310E00001348F0 /* HomeCardsCollectionViewCell.swift */; };
+		C4DBDBBA1F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DBDBB61F310E00001348F0 /* HomeCardsCollectionViewCell.swift */; };
+		C4DBDBBB1F310E00001348F0 /* HomeCardsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DBDBB71F310E00001348F0 /* HomeCardsCollectionViewCell.xib */; };
+		C4DBDBBC1F310E00001348F0 /* HomeCardsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DBDBB71F310E00001348F0 /* HomeCardsCollectionViewCell.xib */; };
+		C4DBDBBD1F310E00001348F0 /* HomeCardsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DBDBB71F310E00001348F0 /* HomeCardsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +87,8 @@
 		C4561E191F0AE5020037CB1C /* WeTeamUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeTeamUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4561E1D1F0AE5020037CB1C /* WeTeamUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeTeamUpUITests.swift; sourceTree = "<group>"; };
 		C4561E1F1F0AE5020037CB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4DBDBB61F310E00001348F0 /* HomeCardsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCardsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4DBDBB71F310E00001348F0 /* HomeCardsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCardsCollectionViewCell.xib; sourceTree = "<group>"; };
 		E41D56BB2EF1DD164603A9A0 /* Pods_WeTeamUpUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeTeamUpUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,6 +163,8 @@
 				C4561DFC1F0AE5020037CB1C /* ViewController.swift */,
 				C40AC7E01F1D3F9600C80277 /* LoginViewController.swift */,
 				C40AC7E21F1D423200C80277 /* TeamHomeViewController.swift */,
+				C4DBDBB61F310E00001348F0 /* HomeCardsCollectionViewCell.swift */,
+				C4DBDBB71F310E00001348F0 /* HomeCardsCollectionViewCell.xib */,
 				C4561DFE1F0AE5020037CB1C /* Main.storyboard */,
 				C4561E041F0AE5020037CB1C /* Assets.xcassets */,
 				C4561E061F0AE5020037CB1C /* LaunchScreen.storyboard */,
@@ -318,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4561E081F0AE5020037CB1C /* LaunchScreen.storyboard in Resources */,
+				C4DBDBBB1F310E00001348F0 /* HomeCardsCollectionViewCell.xib in Resources */,
 				C40AC7E51F1D53AC00C80277 /* GoogleService-Info.plist in Resources */,
 				C4561E051F0AE5020037CB1C /* Assets.xcassets in Resources */,
 				C4561E001F0AE5020037CB1C /* Main.storyboard in Resources */,
@@ -330,6 +341,7 @@
 			files = (
 				C40AC7E61F1D53AC00C80277 /* GoogleService-Info.plist in Resources */,
 				C40AC7F21F1D53DE00C80277 /* Main.storyboard in Resources */,
+				C4DBDBBC1F310E00001348F0 /* HomeCardsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +351,7 @@
 			files = (
 				C40AC7E71F1D53AC00C80277 /* GoogleService-Info.plist in Resources */,
 				C40AC7F31F1D53E000C80277 /* Main.storyboard in Resources */,
+				C4DBDBBD1F310E00001348F0 /* HomeCardsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C40AC7E11F1D3F9600C80277 /* LoginViewController.swift in Sources */,
+				C4DBDBB81F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */,
 				C40AC7E31F1D423200C80277 /* TeamHomeViewController.swift in Sources */,
 				C4561E031F0AE5020037CB1C /* WeTeamUp.xcdatamodeld in Sources */,
 				C4561DFD1F0AE5020037CB1C /* ViewController.swift in Sources */,
@@ -501,6 +515,7 @@
 			files = (
 				C40AC7F01F1D53D200C80277 /* ViewController.swift in Sources */,
 				C40AC7ED1F1D53CC00C80277 /* LoginViewController.swift in Sources */,
+				C4DBDBB91F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */,
 				C40AC7EA1F1D53C700C80277 /* TeamHomeViewController.swift in Sources */,
 				C4561E131F0AE5020037CB1C /* WeTeamUpTests.swift in Sources */,
 				C40AC7EE1F1D53CE00C80277 /* AppDelegate.swift in Sources */,
@@ -514,6 +529,7 @@
 			files = (
 				C40AC7F11F1D53D200C80277 /* ViewController.swift in Sources */,
 				C40AC7EC1F1D53CB00C80277 /* LoginViewController.swift in Sources */,
+				C4DBDBBA1F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */,
 				C40AC7EB1F1D53C800C80277 /* TeamHomeViewController.swift in Sources */,
 				C4561E1E1F0AE5020037CB1C /* WeTeamUpUITests.swift in Sources */,
 				C40AC7EF1F1D53CF00C80277 /* AppDelegate.swift in Sources */,

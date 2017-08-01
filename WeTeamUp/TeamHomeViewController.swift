@@ -11,7 +11,9 @@ import Firebase
 import FacebookCore
 
 
-class TeamHomeViewController: UIViewController {
+class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    @IBOutlet weak var cardsCollection: UICollectionView!
+    
     @IBOutlet weak var objFromLogin: UILabel!
     @IBOutlet var stringLogin: String!
     var ref: DatabaseReference!
@@ -21,34 +23,76 @@ class TeamHomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
 
         print("Begin of code")
         
+        
+        // REGISTER XIB FILE
+        self.cardsCollection.register(UINib(nibName: "HomeCardsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cardcell")
+
+        self .getUserProfileDATA()
+        
+        ref = Database.database().reference()
+        
+
+        
+    }
+    
+    // tell the collection view how many cells to make
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    // make a cell for each cell index path
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell : HomeCardsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardcell", for: indexPath) as! HomeCardsCollectionViewCell
+//      cell.myLabel.text = self.items[indexPath.item]
+        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
+        
+        return cell
+    }
+    
+    // MARK: - UICollectionViewDelegate protocol
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // handle tap events
+        print("You selected cell #\(indexPath.item)!")
+    }
+    
+    // Pragma PROFILE IMAGE
+    
+    override func viewDidLayoutSubviews() {
+        
+        imageBoxProfile.layer.cornerRadius = imageBoxProfile.frame.size.width/2
+        imageBoxProfile.clipsToBounds = true
+        
+    }
+    
+    func getUserProfileDATA() {
+    
         let user = Auth.auth().currentUser
-       
         
+        if let user = user {
+           
+            objFromLogin.text = user.displayName
+            //            let email = user.email
+            // ...
+        }
         
-        if let checkedUrl = URL(string:"http://www.apple.com/euro/ios/ios8/a/generic/images/og.png") {
+        var profileImageURL: NSURL
+        profileImageURL = user!.photoURL! as NSURL
+        
+        if let checkedUrl = URL(string:profileImageURL.absoluteString!) {
             imageBoxProfile.contentMode = .scaleAspectFit
             downloadImage(url: checkedUrl)
         }
         print("End of code. The image will continue downloading in the background and it will be loaded when it ends.")
-        
-        
-        ref = Database.database().reference()
-        
-                
-        if let user = user {
-            // The user's ID, unique to the Firebase project.
-            // Do NOT use this value to authenticate with your backend server,
-            // if you have one. Use getTokenWithCompletion:completion: instead.
-            objFromLogin.text = user.displayName
-//            let email = user.email
-            // ...
-        }
-        
+    
     }
+    
     
     func downloadImage(url: URL) {
         print("Download Started")
