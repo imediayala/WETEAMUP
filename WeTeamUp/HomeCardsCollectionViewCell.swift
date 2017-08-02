@@ -9,7 +9,10 @@
 import UIKit
 
 class HomeCardsCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var labelName: UILabel!
 
+    @IBOutlet weak var labelDescription: UILabel!
+    @IBOutlet weak var imageBoxCell: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

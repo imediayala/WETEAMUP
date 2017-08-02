@@ -9,16 +9,23 @@
 import UIKit
 import Firebase
 import FacebookCore
+import Photos
 
 
 class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
-    @IBOutlet weak var cardsCollection: UICollectionView!
+    @IBOutlet weak var collectionCards: UICollectionView!
     
+   
+    
+    @IBOutlet weak var cardsCollection: UICollectionView!
     @IBOutlet weak var objFromLogin: UILabel!
     @IBOutlet var stringLogin: String!
-    var ref: DatabaseReference!
-
+    var posts: [DataSnapshot]! = []
     @IBOutlet weak var imageBoxProfile: UIImageView!
+    var refUser: DatabaseReference!
+    var refPost: DatabaseReference!
+    var refHandle: DatabaseHandle!
+
 
 
     override func viewDidLoad() {
@@ -31,28 +38,94 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         
         // REGISTER XIB FILE
         self.cardsCollection.register(UINib(nibName: "HomeCardsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cardcell")
+        
+        // CONFIG FIREBASE ELEMENTS
+        refUser = Database.database().reference()
+        refPost = Database.database().reference()
 
+//        self.refPost.child("user_posts").removeObserver(withHandle: refHandle)
+        
         self .getUserProfileDATA()
-        
-        ref = Database.database().reference()
-        
+        self.configureDatabase()
+       
 
+        // TEST MESSAGE
+        let user = Auth.auth().currentUser
+        self.refUser.child("users").child((user?.uid)!).setValue(["username": user?.displayName])
+        self .sendMessage(withData: ["description" : "HOLA"])
         
+        //GET SIZE FOR CELLS
+        let cellSize = CGSize(width:355 , height:160)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical //.horizontal
+        layout.itemSize = cellSize
+//        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+//        layout.minimumLineSpacing = 1.0
+//        layout.minimumInteritemSpacing = 1.0
+        collectionCards.setCollectionViewLayout(layout, animated: true)
+        
+        collectionCards.reloadData()
     }
+    
+    
+    
+   
+    
+    
+    func configureDatabase() {
+        // Listen for new messages in the Firebase database
+        self.refHandle = self.refPost.child("user_posts").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+            guard let strongSelf = self else { return }
+            strongSelf.self.posts.append(snapshot)
+//            strongSelf.clientTable.insertRows(at: [IndexPath(row: strongSelf.messages.count-1, section: 0)], with: .automatic)
+            strongSelf.collectionCards.insertItems(at: [IndexPath(row: strongSelf.posts.count-1, section: 0)])
+
+
+        })
+    }
+ 
+    
+    func sendMessage(withData data: [String: String]) {
+        var mdata = data
+        mdata["name"] = Auth.auth().currentUser?.displayName
+        if let photoURL = Auth.auth().currentUser?.photoURL {
+            mdata["photourl"] = photoURL.absoluteString
+        }
+        
+        // Push data to Firebase Database
+        self.refPost.child("user_posts").childByAutoId().setValue(mdata)
+    }
+    
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return self.posts.count
     }
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell : HomeCardsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardcell", for: indexPath) as! HomeCardsCollectionViewCell
-//      cell.myLabel.text = self.items[indexPath.item]
-        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
         
+        // Unpack message from Firebase DataSnapshot
+        let messageSnapshot = self.posts[indexPath.row]
+        guard let message = messageSnapshot.value as? [String: String] else { return cell }
+        let name = message[Constants.MessageFields.name] ?? ""
+        let text = message[Constants.MessageFields.text] ?? ""
+//        cell.labelName?.text = name + ": " + text
+//        cell.labelDescription?.text = name + ": " + text
+        cell.labelName?.text = name
+        cell.labelDescription?.text = text
+        cell.imageBoxCell?.image = UIImage(named: "ic_account_circle")
+        
+        // DOWNLOAD IMAGE
+        if let photoURL = message[Constants.MessageFields.photoURL], let URL = URL(string: photoURL),
+            let data = try? Data(contentsOf: URL) {
+            cell.imageBoxCell?.image = UIImage(data: data)
+        }
         return cell
+        
+
     }
     
     // MARK: - UICollectionViewDelegate protocol
@@ -114,6 +187,36 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
     }
     
     
+    // MARK: - Image Picker
+    
+    @IBAction func didTapAddPhoto(_ sender: AnyObject) {
+        let picker = UIImagePickerController()
+        picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+        } else {
+            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        }
+        
+        present(picker, animated: true, completion:nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion:nil)
+        
+        let referenceUrl = info[UIImagePickerControllerReferenceURL] as! URL
+        let assets = PHAsset.fetchAssets(withALAssetURLs: [referenceUrl], options: nil)
+        let asset = assets.firstObject
+        asset?.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
+            _ = contentEditingInput?.fullSizeImageURL
+            _ = "\(String(describing: Auth.auth().currentUser?.uid))/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(referenceUrl.lastPathComponent)"
+        })
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion:nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

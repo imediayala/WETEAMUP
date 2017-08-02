@@ -35,6 +35,9 @@
 		C4561E081F0AE5020037CB1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4561E061F0AE5020037CB1C /* LaunchScreen.storyboard */; };
 		C4561E131F0AE5020037CB1C /* WeTeamUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561E121F0AE5020037CB1C /* WeTeamUpTests.swift */; };
 		C4561E1E1F0AE5020037CB1C /* WeTeamUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561E1D1F0AE5020037CB1C /* WeTeamUpUITests.swift */; };
+		C479A1E11F32618E00CA36E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479A1E01F32618E00CA36E7 /* Constants.swift */; };
+		C479A1E21F32618E00CA36E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479A1E01F32618E00CA36E7 /* Constants.swift */; };
+		C479A1E31F32618E00CA36E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479A1E01F32618E00CA36E7 /* Constants.swift */; };
 		C4DBDBB81F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DBDBB61F310E00001348F0 /* HomeCardsCollectionViewCell.swift */; };
 		C4DBDBB91F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DBDBB61F310E00001348F0 /* HomeCardsCollectionViewCell.swift */; };
 		C4DBDBBA1F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DBDBB61F310E00001348F0 /* HomeCardsCollectionViewCell.swift */; };
@@ -87,6 +90,7 @@
 		C4561E191F0AE5020037CB1C /* WeTeamUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeTeamUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4561E1D1F0AE5020037CB1C /* WeTeamUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeTeamUpUITests.swift; sourceTree = "<group>"; };
 		C4561E1F1F0AE5020037CB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C479A1E01F32618E00CA36E7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4DBDBB61F310E00001348F0 /* HomeCardsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4DBDBB71F310E00001348F0 /* HomeCardsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCardsCollectionViewCell.xib; sourceTree = "<group>"; };
 		E41D56BB2EF1DD164603A9A0 /* Pods_WeTeamUpUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeTeamUpUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				C40AC7F41F1D69B400C80277 /* WeTeamUp.entitlements */,
+				C479A1E01F32618E00CA36E7 /* Constants.swift */,
 				C4561DFA1F0AE5020037CB1C /* AppDelegate.swift */,
 				C4561DFC1F0AE5020037CB1C /* ViewController.swift */,
 				C40AC7E01F1D3F9600C80277 /* LoginViewController.swift */,
@@ -504,6 +509,7 @@
 				C4DBDBB81F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */,
 				C40AC7E31F1D423200C80277 /* TeamHomeViewController.swift in Sources */,
 				C4561E031F0AE5020037CB1C /* WeTeamUp.xcdatamodeld in Sources */,
+				C479A1E11F32618E00CA36E7 /* Constants.swift in Sources */,
 				C4561DFD1F0AE5020037CB1C /* ViewController.swift in Sources */,
 				C4561DFB1F0AE5020037CB1C /* AppDelegate.swift in Sources */,
 			);
@@ -520,6 +526,7 @@
 				C4561E131F0AE5020037CB1C /* WeTeamUpTests.swift in Sources */,
 				C40AC7EE1F1D53CE00C80277 /* AppDelegate.swift in Sources */,
 				C40AC7E81F1D53C100C80277 /* WeTeamUp.xcdatamodeld in Sources */,
+				C479A1E21F32618E00CA36E7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +541,7 @@
 				C4561E1E1F0AE5020037CB1C /* WeTeamUpUITests.swift in Sources */,
 				C40AC7EF1F1D53CF00C80277 /* AppDelegate.swift in Sources */,
 				C40AC7E91F1D53C200C80277 /* WeTeamUp.xcdatamodeld in Sources */,
+				C479A1E31F32618E00CA36E7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
