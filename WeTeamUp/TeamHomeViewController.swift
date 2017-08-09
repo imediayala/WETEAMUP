@@ -12,7 +12,10 @@ import FacebookCore
 import Photos
 
 
-class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate {
+    @IBOutlet var masterView: UIView!
+    @IBOutlet weak var stretchyView: UIView!
+    @IBOutlet weak var collectioHeader: UICollectionReusableView!
     @IBOutlet weak var collectionCards: UICollectionView!
     
    
@@ -45,17 +48,38 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
 
 //        self.refPost.child("user_posts").removeObserver(withHandle: refHandle)
         
-        self .getUserProfileDATA()
+        self.getUserProfileDATA()
         self.configureDatabase()
        
 
-        // TEST MESSAGE
-        let user = Auth.auth().currentUser
-        self.refUser.child("users").child((user?.uid)!).setValue(["username": user?.displayName])
-        self .sendMessage(withData: ["description" : "HOLA"])
+//        // TEST MESSAGE
+//        let user = Auth.auth().currentUser
+//        self.refUser.child("users").child((user?.uid)!).setValue(["username": user?.displayName])
+//        self .sendMessage(withData: ["description" : "HOLA"])
+        
+        // CREATE GESTURE PAN
+//        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+//        self.collectionCards.addGestureRecognizer(gestureRecognizer)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipeDown.direction = .down
+        self.stretchyView.addGestureRecognizer(swipeDown)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipeUp.direction = .up
+        self.stretchyView.addGestureRecognizer(swipeUp)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipeRight.direction = .right
+        self.stretchyView.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipeLeft.direction = .left
+        self.stretchyView.addGestureRecognizer(swipeLeft)
+        
         
         //GET SIZE FOR CELLS
-        let cellSize = CGSize(width:355 , height:160)
+        let cellSize = CGSize(width:355 , height:50)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical //.horizontal
         layout.itemSize = cellSize
@@ -67,9 +91,51 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         collectionCards.reloadData()
     }
     
+    func swiped(gesture: UIGestureRecognizer)
+    {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer
+        {
+            switch swipeGesture.direction
+            {
+                
+            case UISwipeGestureRecognizerDirection.right:
+                print("Swiped Right")
+                
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped Left")
+                
+            case UISwipeGestureRecognizerDirection.up:
+                print("Swiped Up")
+                UIView.animate(withDuration: 1.0, animations: {
+                    self.stretchyView.frame.origin.y = -200
+                    
+                })
+            case UISwipeGestureRecognizerDirection.down:
+                print("Swiped Down")
+                UIView.animate(withDuration: 1.0, animations: {
+                    self.stretchyView.frame.origin.y = self.masterView.frame.origin.y
+                })
+                
+            default:
+                break
+            }
+        }
+    }
+    
+//    @IBAction func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
+//        if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
+//            
+//            let translation = gestureRecognizer.translation(in: self.view)
+//            // note: 'view' is optional and need to be unwrapped
+//            gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x + translation.x, y: gestureRecognizer.view!.center.y + translation.y)
+//            gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
+//        }
+//    }
     
     
-   
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
     
     
     func configureDatabase() {
@@ -96,10 +162,22 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         self.refPost.child("user_posts").childByAutoId().setValue(mdata)
     }
     
-    
+
+
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.posts.count
+    }
+    
+    
+     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath as IndexPath) as! SectionHeaderCollectionReusableView
+        header.textLabelHeader.text = "YOUR_HEADER_TEXT"
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, hea section: Int) -> CGSize {
+        return CGSize(width: 100, height: 200)
     }
     
     // make a cell for each cell index path
@@ -123,6 +201,8 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
             let data = try? Data(contentsOf: URL) {
             cell.imageBoxCell?.image = UIImage(data: data)
         }
+        
+
         return cell
         
 

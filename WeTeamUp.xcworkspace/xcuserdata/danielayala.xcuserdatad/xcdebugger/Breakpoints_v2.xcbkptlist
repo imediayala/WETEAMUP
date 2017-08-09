@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeTeamUp/TeamHomeViewController.swift"
-            timestampString = "523399677.021489"
+            timestampString = "524008688.777149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "collectionView(_:layout:hea:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,70 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeTeamUp/TeamHomeViewController.swift"
-            timestampString = "523399677.021489"
+            timestampString = "524008688.777149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "swiped(gesture:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeTeamUp.TeamHomeViewController.swiped (gesture : __ObjC.UIGestureRecognizer) -&gt; ()"
+                  moduleName = "WeTeamUp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielayala/DEVELOPMENT/XcodeSwift/WeTeamUp/WeTeamUp/TeamHomeViewController.swift"
+                  timestampString = "524008311.889502"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeTeamUp.TeamHomeViewController.swiped (gesture : __ObjC.UIGestureRecognizer) -&gt; ()"
+                  moduleName = "WeTeamUp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielayala/DEVELOPMENT/XcodeSwift/WeTeamUp/WeTeamUp/TeamHomeViewController.swift"
+                  timestampString = "524008311.892436"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "134">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeTeamUp/TeamHomeViewController.swift"
+            timestampString = "524008688.777149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

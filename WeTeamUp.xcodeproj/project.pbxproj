@@ -27,6 +27,9 @@
 		C40AC7F11F1D53D200C80277 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561DFC1F0AE5020037CB1C /* ViewController.swift */; };
 		C40AC7F21F1D53DE00C80277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4561DFE1F0AE5020037CB1C /* Main.storyboard */; };
 		C40AC7F31F1D53E000C80277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4561DFE1F0AE5020037CB1C /* Main.storyboard */; };
+		C4237F0D1F3B9D2D0003840D /* SectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4237F0C1F3B9D2D0003840D /* SectionHeaderCollectionReusableView.swift */; };
+		C4237F0E1F3B9D2D0003840D /* SectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4237F0C1F3B9D2D0003840D /* SectionHeaderCollectionReusableView.swift */; };
+		C4237F0F1F3B9D2D0003840D /* SectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4237F0C1F3B9D2D0003840D /* SectionHeaderCollectionReusableView.swift */; };
 		C4561DFB1F0AE5020037CB1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561DFA1F0AE5020037CB1C /* AppDelegate.swift */; };
 		C4561DFD1F0AE5020037CB1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561DFC1F0AE5020037CB1C /* ViewController.swift */; };
 		C4561E001F0AE5020037CB1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4561DFE1F0AE5020037CB1C /* Main.storyboard */; };
@@ -76,6 +79,7 @@
 		C40AC7E21F1D423200C80277 /* TeamHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamHomeViewController.swift; sourceTree = "<group>"; };
 		C40AC7E41F1D53AC00C80277 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C40AC7F41F1D69B400C80277 /* WeTeamUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeTeamUp.entitlements; sourceTree = "<group>"; };
+		C4237F0C1F3B9D2D0003840D /* SectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		C4561DF71F0AE5020037CB1C /* WeTeamUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTeamUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4561DFA1F0AE5020037CB1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4561DFC1F0AE5020037CB1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				C40AC7E01F1D3F9600C80277 /* LoginViewController.swift */,
 				C40AC7E21F1D423200C80277 /* TeamHomeViewController.swift */,
 				C4DBDBB61F310E00001348F0 /* HomeCardsCollectionViewCell.swift */,
+				C4237F0C1F3B9D2D0003840D /* SectionHeaderCollectionReusableView.swift */,
 				C4DBDBB71F310E00001348F0 /* HomeCardsCollectionViewCell.xib */,
 				C4561DFE1F0AE5020037CB1C /* Main.storyboard */,
 				C4561E041F0AE5020037CB1C /* Assets.xcassets */,
@@ -509,6 +514,7 @@
 				C4DBDBB81F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */,
 				C40AC7E31F1D423200C80277 /* TeamHomeViewController.swift in Sources */,
 				C4561E031F0AE5020037CB1C /* WeTeamUp.xcdatamodeld in Sources */,
+				C4237F0D1F3B9D2D0003840D /* SectionHeaderCollectionReusableView.swift in Sources */,
 				C479A1E11F32618E00CA36E7 /* Constants.swift in Sources */,
 				C4561DFD1F0AE5020037CB1C /* ViewController.swift in Sources */,
 				C4561DFB1F0AE5020037CB1C /* AppDelegate.swift in Sources */,
@@ -522,6 +528,7 @@
 				C40AC7F01F1D53D200C80277 /* ViewController.swift in Sources */,
 				C40AC7ED1F1D53CC00C80277 /* LoginViewController.swift in Sources */,
 				C4DBDBB91F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */,
+				C4237F0E1F3B9D2D0003840D /* SectionHeaderCollectionReusableView.swift in Sources */,
 				C40AC7EA1F1D53C700C80277 /* TeamHomeViewController.swift in Sources */,
 				C4561E131F0AE5020037CB1C /* WeTeamUpTests.swift in Sources */,
 				C40AC7EE1F1D53CE00C80277 /* AppDelegate.swift in Sources */,
@@ -537,6 +544,7 @@
 				C40AC7F11F1D53D200C80277 /* ViewController.swift in Sources */,
 				C40AC7EC1F1D53CB00C80277 /* LoginViewController.swift in Sources */,
 				C4DBDBBA1F310E00001348F0 /* HomeCardsCollectionViewCell.swift in Sources */,
+				C4237F0F1F3B9D2D0003840D /* SectionHeaderCollectionReusableView.swift in Sources */,
 				C40AC7EB1F1D53C800C80277 /* TeamHomeViewController.swift in Sources */,
 				C4561E1E1F0AE5020037CB1C /* WeTeamUpUITests.swift in Sources */,
 				C40AC7EF1F1D53CF00C80277 /* AppDelegate.swift in Sources */,
