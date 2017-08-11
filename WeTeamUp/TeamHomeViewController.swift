@@ -14,11 +14,10 @@ import Photos
 
 class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate {
     @IBOutlet var masterView: UIView!
-    @IBOutlet weak var stretchyView: UIView!
+    @IBOutlet weak var stretchyView: SpringView!
     @IBOutlet weak var collectioHeader: UICollectionReusableView!
     @IBOutlet weak var collectionCards: UICollectionView!
     
-   
     
     @IBOutlet weak var cardsCollection: UICollectionView!
     @IBOutlet weak var objFromLogin: UILabel!
@@ -79,7 +78,7 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         
         
         //GET SIZE FOR CELLS
-        let cellSize = CGSize(width:355 , height:50)
+        let cellSize = CGSize(width:355 , height:160)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical //.horizontal
         layout.itemSize = cellSize
@@ -104,16 +103,32 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
             case UISwipeGestureRecognizerDirection.left:
                 print("Swiped Left")
                 
+                let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+                rotationAnimation.fromValue = 0.0
+                rotationAnimation.toValue = Double.pi
+                rotationAnimation.duration = 1.0
+                
+                
+                self.stretchyView.layer.add(rotationAnimation, forKey: nil)
+                
             case UISwipeGestureRecognizerDirection.up:
                 print("Swiped Up")
                 UIView.animate(withDuration: 1.0, animations: {
-                    self.stretchyView.frame.origin.y = -200
+
+                    self.stretchyView.animation = "slideUp"
+                    self.stretchyView.duration = 2.0
+                    self.stretchyView.velocity = 1.0
+                    self.stretchyView.animate()
                     
                 })
             case UISwipeGestureRecognizerDirection.down:
                 print("Swiped Down")
                 UIView.animate(withDuration: 1.0, animations: {
-                    self.stretchyView.frame.origin.y = self.masterView.frame.origin.y
+                    
+                    self.stretchyView.animation = "slideDown"
+                    self.stretchyView.duration = 2.0
+                    self.stretchyView.velocity = 1.0
+                    self.stretchyView.animate()
                 })
                 
             default:

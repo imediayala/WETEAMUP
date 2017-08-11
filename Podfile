@@ -15,7 +15,6 @@ pod 'Firebase/Database'
 pod 'Firebase/Auth'
 
 
-
   target 'WeTeamUpTests' do
     inherit! :search_paths
     # Pods for testing

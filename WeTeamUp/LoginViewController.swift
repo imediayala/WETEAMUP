@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
 import FBSDKCoreKit
@@ -21,10 +20,16 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var textFieldPass: UITextField!
     
+    @IBOutlet weak var labelPass: SpringLabel!
+    @IBOutlet weak var labelUser: SpringLabel!
     let loginButton = FBSDKLoginButton()
     
+    @IBOutlet weak var loginButtonCustom: SpringButton!
     
     @IBAction func buttonLoginAction(_ sender: Any) {
+    
+ 
+       
         
         //PUSH VIEW CONTROLLER AND SEND OBJECT
         
@@ -46,7 +51,28 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        labelUser.animation = "pop"
+        labelUser.duration = 2.0
+        labelUser.velocity = 1.0
+        labelUser.animate()
+        
+        labelPass.animation = "pop"
+        labelPass.duration = 2.0
+        labelPass.velocity = 1.0
+        labelPass.animate()
+        
+        loginButtonCustom.animation = "pop"
+        loginButtonCustom.duration = 2.0
+        loginButtonCustom.velocity = 1.0
+        loginButtonCustom.animate()
+        
+    }
+    
     override func viewDidLoad() {
+        
         
         if FBSDKAccessToken.current() != nil {
             // user already has access token
