@@ -14,20 +14,19 @@ import Photos
 
 
 class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout {
-    
-    @IBOutlet var masterView: UIView!
+
+    @IBOutlet var masterView: SpringView!
     @IBOutlet weak var stretchyView: SpringView!
-    @IBOutlet weak var collectioHeader: UICollectionReusableView!
     @IBOutlet weak var collectionCards: UICollectionView!
     @IBOutlet weak var objFromLogin: UILabel!
+    @IBOutlet weak var aboveHeaderCell: aboveHeaderCollectionViewCell!
+    @IBOutlet weak var gluedCellHeader: UICollectionReusableView!
     @IBOutlet var stringLogin: String!
     var posts: [DataSnapshot]! = []
-    @IBOutlet weak var imageBoxProfile: UIImageView!
     var refUser: DatabaseReference!
     var refPost: DatabaseReference!
     var refHandle: DatabaseHandle!
-//    let headerNib = UINib(nibName: "IOGrowHeader", bundle: Bundle.main)
-
+    var didLoadCellHeader: Bool?
 
 
 
@@ -35,6 +34,22 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+//        
+//        let logo = UIImage(named: "Navigation")
+//        let imageView = UIImageView(image:logo)
+//        self.navigationItem.titleView = imageView
+        
+        //CONFIG NAV BAR
+        self.navigationItem.title = "We Team Up"
+        navigationController?.navigationBar.barTintColor = UIColor.init(hex: "0C7ACE")
+        self.navigationController?.view.backgroundColor = .clear
+        let attrs = [
+            NSForegroundColorAttributeName: UIColor.white,
+            NSFontAttributeName: UIFont(name: "Chalkboard SE", size: 24)!
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = attrs
+
         
         // CONFIG FIREBASE ELEMENTS
         refUser = Database.database().reference()
@@ -47,10 +62,7 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         
 //          self.collectionCards.register(UINib(nibName: "subHeaderCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "subheadercell")
         
-        let layout = collectionCards.collectionViewLayout as? StickyHeaderCollectionViewFlowLayout
-        layout?.sectionHeadersPinToVisibleBounds = true
-        
-//        self.getUserProfileDATA()
+        self.getUserProfileDATA()
         self.configureDatabase()
 
 //        self.refPost.child("user_posts").removeObserver(withHandle: refHandle)
@@ -61,102 +73,32 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
 //        self.refUser.child("users").child((user?.uid)!).setValue(["username": user?.displayName])
 //        self .sendMessage(withData: ["description" : "HOLA"])
         
-        
-       // CREATE GESTURE PAN
-//        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-//        self.collectionCards.addGestureRecognizer(gestureRecognizer)
-        
-//        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
-//        swipeDown.direction = .down
-//        self.stretchyView.addGestureRecognizer(swipeDown)
-//        
-//        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
-//        swipeUp.direction = .up
-//        self.stretchyView.addGestureRecognizer(swipeUp)
-//        
-//        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
-//        swipeRight.direction = .right
-//        self.stretchyView.addGestureRecognizer(swipeRight)
-//        
-//        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
-//        swipeLeft.direction = .left
-//        self.stretchyView.addGestureRecognizer(swipeLeft)
-        
-        
+
+        //CELLS LAYOUT
+        let layout = collectionCards.collectionViewLayout as? StickyHeaderCollectionViewFlowLayout
+        layout?.sectionHeadersPinToVisibleBounds = true
+
         //GET SIZE FOR CELLS
-        let cellSize = CGSize(width:355 , height:160)
+//        let cellSize = CGSize(width:355 , height:600)
         let layouty = StickyHeaderCollectionViewFlowLayout()
-        layouty.scrollDirection = .vertical //.horizontal
-        layouty.itemSize = cellSize
+//        layouty.scrollDirection = .vertical //.horizontal
+//        layouty.itemSize = cellSize
         collectionCards.setCollectionViewLayout(layouty, animated: true)
         
         collectionCards.reloadData()
         
     }
     
-    //    @IBAction func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
-    //        if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
-    //
-    //            let translation = gestureRecognizer.translation(in: self.view)
-    //            // note: 'view' is optional and need to be unwrapped
-    //            gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x + translation.x, y: gestureRecognizer.view!.center.y + translation.y)
-    //            gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
-    //        }
-    //    }
-    
-    
-//    func swiped(gesture: UIGestureRecognizer)
-//    {
-//        if let swipeGesture = gesture as? UISwipeGestureRecognizer
-//        {
-//            switch swipeGesture.direction
-//            {
-//                
-//            case UISwipeGestureRecognizerDirection.right:
-//                print("Swiped Right")
-//                
-//            case UISwipeGestureRecognizerDirection.left:
-//                print("Swiped Left")
-//                
-//                let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-//                rotationAnimation.fromValue = 0.0
-//                rotationAnimation.toValue = Double.pi
-//                rotationAnimation.duration = 1.0
-//                
-//                
-//                self.stretchyView.layer.add(rotationAnimation, forKey: nil)
-//                
-//            case UISwipeGestureRecognizerDirection.up:
-//                print("Swiped Up")
-//                UIView.animate(withDuration: 1.0, animations: {
-//
-//                    self.stretchyView.animation = "slideUp"
-//                    self.stretchyView.duration = 2.0
-//                    self.stretchyView.velocity = 1.0
-//                    self.stretchyView.animate()
-//                    
-//                })
-//            case UISwipeGestureRecognizerDirection.down:
-//                print("Swiped Down")
-//                UIView.animate(withDuration: 1.0, animations: {
-//                    
-//                    self.stretchyView.animation = "slideDown"
-//                    self.stretchyView.duration = 2.0
-//                    self.stretchyView.velocity = 1.0
-//                    self.stretchyView.animate()
-//                })
-//                
-//            default:
-//                break
-//            }
-//        }
-//    }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
-
+        
+        masterView.animation = "slideDown"
+        masterView.duration = 2.0
+        masterView.velocity = 1.0
+        masterView.animate()
     }
     
+    
+    // MARK: - UICollectionViewDelegate protocol
 
     // number of sections is 2. Section above search and below search
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -173,43 +115,37 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         }
     }
     
-//    // tell the collection view how many cells to make
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return self.posts.count
-//    }
-//    
-
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        
-//        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headersection", for: indexPath)
-//        return view
-//    }
-
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
-//        return CGSize(width: self.collectionCards.bounds.width, height: 238)
-//        
-//    }
-    
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.section == 0 {
             // above search cell
-
-//            let cell : subHeaderCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "subheadercell", for: indexPath) as! subHeaderCollectionViewCell
-//            return cel
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "aboveSearch", for: indexPath)
-            return cell
+            aboveHeaderCell = collectionView.dequeueReusableCell(withReuseIdentifier: "aboveSearch", for: indexPath) as! aboveHeaderCollectionViewCell
+            let user = Auth.auth().currentUser
+            aboveHeaderCell.labelNameProfile.text = user?.displayName
+            didLoadCellHeader = true
+
+            // GET IMAGE
+            var profileImageURL: NSURL
+            profileImageURL = user!.photoURL! as NSURL
+            if let checkedUrl = URL(string:profileImageURL.absoluteString!) {
+                aboveHeaderCell.imageBoxProfile.contentMode = .scaleAspectFit
+                downloadImage(url: checkedUrl, cell: aboveHeaderCell)
+            }
+            
+            print("End of code. The image will continue downloading in the background and it will be loaded when it ends.")
+            
+            aboveHeaderCell.alpha = 0
+            UIView.animate(withDuration: 2, animations: { self.aboveHeaderCell.alpha = 1 })
+
+            return aboveHeaderCell
 
             
         } else {
-            // below search cell
+        // below search cell
             
             let cell : HomeCardsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardcell", for: indexPath) as! HomeCardsCollectionViewCell
-            
 //            // Unpack message from Firebase DataSnapshot
             let messageSnapshot = self.posts[indexPath.row]
             guard let message = messageSnapshot.value as? [String: String] else { return cell }
@@ -225,6 +161,7 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
             if let photoURL = message[Constants.MessageFields.photoURL], let URL = URL(string: photoURL),
                 let data = try? Data(contentsOf: URL) {
                 cell.imageBoxCell?.image = UIImage(data: data)
+                
             }
             
             return cell
@@ -232,14 +169,44 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         }
         
         
-      
+        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+//    for cell in collectionCards.visibleCells as [UICollectionViewCell] {
+        if didLoadCellHeader == true {
+            let point = aboveHeaderCell.convert(collectionCards.center, to: collectionCards.superview)
+            aboveHeaderCell.alpha = ((point.y * 100) / collectionCards.bounds.maxY) / 100
+        }
+   
+        
+
     }
     
     // implementation of function viewForSupplementaryElementOfKind, for section header of collectionView
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // returning the search bar for header
-        return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headersection", for: indexPath)
+        
+        
+         gluedCellHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headersection", for: indexPath)
+
+        return gluedCellHeader
     }
+    
+    // SIZE FOR CUSTOM CELLS BASED ON INDEX PATH
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+     
+        if indexPath == IndexPath(item: 0, section: 0) {
+
+        return CGSize(width:355 , height:200)
+            
+        }
+        return CGSize(width:355 , height:350)
+    }
+
     
     // size for header in section: since we have 2 sections, collectionView will ask size for header for both sections so we make section header of first section with height 0 and width 0 so it remains like invisible.
     
@@ -251,12 +218,11 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
             
         }
         // for section header i.e. actual search bar
-        return CGSize(width: collectionView.frame.width, height: 50
-        )
+    
+        return CGSize(width: collectionView.frame.width, height: 50)
     }
 
-    
-    // MARK: - UICollectionViewDelegate protocol
+    	
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
@@ -264,7 +230,7 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
     }
     
     
-    
+    //FIREBASE DATABASE
     
     func configureDatabase() {
         // Listen for new messages in the Firebase database
@@ -277,7 +243,6 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
             
         })
     }
-    
     
     func sendMessage(withData data: [String: String]) {
         var mdata = data
@@ -294,42 +259,44 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
     
 //    override func viewDidLayoutSubviews() {
 //        
-//        imageBoxProfile.layer.cornerRadius = imageBoxProfile.frame.size.width/2
-//        imageBoxProfile.clipsToBounds = true
-//        
+//
 //    }
-    
+//    
     func getUserProfileDATA() {
     
-        let user = Auth.auth().currentUser
-        
-        if let user = user {
-           
-            objFromLogin.text = user.displayName
-            //            let email = user.email
-            // ...
-        }
-        
-        var profileImageURL: NSURL
-        profileImageURL = user!.photoURL! as NSURL
-        
-        if let checkedUrl = URL(string:profileImageURL.absoluteString!) {
-            imageBoxProfile.contentMode = .scaleAspectFit
-            downloadImage(url: checkedUrl)
-        }
-        print("End of code. The image will continue downloading in the background and it will be loaded when it ends.")
+//        let user = Auth.auth().currentUser
+//        
+//        if let user = user {
+//           
+//           print("user On")
+//            //            let email = user.email
+//            // ...
+//        }
+//        
+//        var profileImageURL: NSURL
+//        profileImageURL = user!.photoURL! as NSURL
+//        
+//        if let checkedUrl = URL(string:profileImageURL.absoluteString!) {
+//            aboveHeaderCell.imageBoxProfile.contentMode = .scaleAspectFit
+//            downloadImage(url: checkedUrl)
+//        }
+//        print("End of code. The image will continue downloading in the background and it will be loaded when it ends.")
     
     }
     
     
-    func downloadImage(url: URL) {
+    func downloadImage(url: URL, cell: aboveHeaderCollectionViewCell) {
         print("Download Started")
         getDataFromUrl(url: url) { (data, response, error)  in
             guard let data = data, error == nil else { return }
             print(response?.suggestedFilename ?? url.lastPathComponent)
             print("Download Finished")
             DispatchQueue.main.async() { () -> Void in
-                self.imageBoxProfile.image = UIImage(data: data)
+                cell.imageBoxProfile.image = UIImage(data: data)
+                
+                //SET IMAGE LAYOUT
+                cell.imageBoxProfile.layer.cornerRadius = cell.imageBoxProfile.frame.size.width/2
+                cell.imageBoxProfile.clipsToBounds = true
             }
         }
     }
@@ -379,6 +346,92 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
 //    }
 //    
 
+    
+    //MARK GESTURES CONFIG
+    func initSwipeGestures(){
+        
+        // CREATE GESTURE PAN
+        //        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+        //        self.collectionCards.addGestureRecognizer(gestureRecognizer)
+        
+        //        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        //        swipeDown.direction = .down
+        //        self.stretchyView.addGestureRecognizer(swipeDown)
+        //
+        //        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        //        swipeUp.direction = .up
+        //        self.stretchyView.addGestureRecognizer(swipeUp)
+        //
+        //        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        //        swipeRight.direction = .right
+        //        self.stretchyView.addGestureRecognizer(swipeRight)
+        //
+        //        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        //        swipeLeft.direction = .left
+        //        self.stretchyView.addGestureRecognizer(swipeLeft)
+        
+        
+    }
+    
+    //    @IBAction func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
+    //        if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
+    //
+    //            let translation = gestureRecognizer.translation(in: self.view)
+    //            // note: 'view' is optional and need to be unwrapped
+    //            gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x + translation.x, y: gestureRecognizer.view!.center.y + translation.y)
+    //            gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
+    //        }
+    //    }
+    
+    
+    //    func swiped(gesture: UIGestureRecognizer)
+    //    {
+    //        if let swipeGesture = gesture as? UISwipeGestureRecognizer
+    //        {
+    //            switch swipeGesture.direction
+    //            {
+    //
+    //            case UISwipeGestureRecognizerDirection.right:
+    //                print("Swiped Right")
+    //
+    //            case UISwipeGestureRecognizerDirection.left:
+    //                print("Swiped Left")
+    //
+    //                let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+    //                rotationAnimation.fromValue = 0.0
+    //                rotationAnimation.toValue = Double.pi
+    //                rotationAnimation.duration = 1.0
+    //
+    //
+    //                self.stretchyView.layer.add(rotationAnimation, forKey: nil)
+    //
+    //            case UISwipeGestureRecognizerDirection.up:
+    //                print("Swiped Up")
+    //                UIView.animate(withDuration: 1.0, animations: {
+    //
+    //                    self.stretchyView.animation = "slideUp"
+    //                    self.stretchyView.duration = 2.0
+    //                    self.stretchyView.velocity = 1.0
+    //                    self.stretchyView.animate()
+    //
+    //                })
+    //            case UISwipeGestureRecognizerDirection.down:
+    //                print("Swiped Down")
+    //                UIView.animate(withDuration: 1.0, animations: {
+    //
+    //                    self.stretchyView.animation = "slideDown"
+    //                    self.stretchyView.duration = 2.0
+    //                    self.stretchyView.velocity = 1.0
+    //                    self.stretchyView.animate()
+    //                })
+    //                
+    //            default:
+    //                break
+    //            }
+    //        }
+    //    }
+
+    
     /*
     // MARK: - Navigation
 

@@ -36,6 +36,9 @@
 		C426AF771F41235A00BD5DD3 /* StickyHeaderCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AF761F41235A00BD5DD3 /* StickyHeaderCollectionViewFlowLayout.swift */; };
 		C426AF781F41235A00BD5DD3 /* StickyHeaderCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AF761F41235A00BD5DD3 /* StickyHeaderCollectionViewFlowLayout.swift */; };
 		C426AF791F41235A00BD5DD3 /* StickyHeaderCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C426AF761F41235A00BD5DD3 /* StickyHeaderCollectionViewFlowLayout.swift */; };
+		C4560CE11F41D57100076F1D /* aboveHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4560CE01F41D57100076F1D /* aboveHeaderCollectionViewCell.swift */; };
+		C4560CE21F41D57100076F1D /* aboveHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4560CE01F41D57100076F1D /* aboveHeaderCollectionViewCell.swift */; };
+		C4560CE31F41D57100076F1D /* aboveHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4560CE01F41D57100076F1D /* aboveHeaderCollectionViewCell.swift */; };
 		C4561DFB1F0AE5020037CB1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561DFA1F0AE5020037CB1C /* AppDelegate.swift */; };
 		C4561DFD1F0AE5020037CB1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4561DFC1F0AE5020037CB1C /* ViewController.swift */; };
 		C4561E001F0AE5020037CB1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4561DFE1F0AE5020037CB1C /* Main.storyboard */; };
@@ -184,6 +187,7 @@
 		C426AF6E1F410CDD00BD5DD3 /* subHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		C426AF6F1F410CDD00BD5DD3 /* subHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = subHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		C426AF761F41235A00BD5DD3 /* StickyHeaderCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeaderCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		C4560CE01F41D57100076F1D /* aboveHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboveHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4561DF71F0AE5020037CB1C /* WeTeamUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeTeamUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4561DFA1F0AE5020037CB1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4561DFC1F0AE5020037CB1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				C4DBDBB71F310E00001348F0 /* HomeCardsCollectionViewCell.xib */,
 				C426AF6E1F410CDD00BD5DD3 /* subHeaderCollectionViewCell.swift */,
 				C426AF6F1F410CDD00BD5DD3 /* subHeaderCollectionViewCell.xib */,
+				C4560CE01F41D57100076F1D /* aboveHeaderCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -315,6 +320,8 @@
 			children = (
 				C4B576D01F3E7FD900F73F0F /* IOParallaxHeader */,
 				C4B576C31F3E796800F73F0F /* Parallax */,
+				C426AF6D1F410C8D00BD5DD3 /* Cells */,
+				C4ADF6061F4383940092EC25 /* Extensions */,
 				C4BB99801F3E2542007497C0 /* Spring */,
 				C40AC7F41F1D69B400C80277 /* WeTeamUp.entitlements */,
 				C479A1E01F32618E00CA36E7 /* Constants.swift */,
@@ -322,7 +329,6 @@
 				C4561DFC1F0AE5020037CB1C /* ViewController.swift */,
 				C40AC7E01F1D3F9600C80277 /* LoginViewController.swift */,
 				C40AC7E21F1D423200C80277 /* TeamHomeViewController.swift */,
-				C426AF761F41235A00BD5DD3 /* StickyHeaderCollectionViewFlowLayout.swift */,
 				C4561E041F0AE5020037CB1C /* Assets.xcassets */,
 				C4561DFE1F0AE5020037CB1C /* Main.storyboard */,
 				C4561E061F0AE5020037CB1C /* LaunchScreen.storyboard */,
@@ -351,12 +357,19 @@
 			path = WeTeamUpUITests;
 			sourceTree = "<group>";
 		};
+		C4ADF6061F4383940092EC25 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C426AF761F41235A00BD5DD3 /* StickyHeaderCollectionViewFlowLayout.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		C4B576C31F3E796800F73F0F /* Parallax */ = {
 			isa = PBXGroup;
 			children = (
 				C4B576C41F3E799500F73F0F /* IOStickyHeaderFlowLayout.swift */,
 				C4B576C51F3E799500F73F0F /* IOStickyHeaderFlowLayoutAttributes.swift */,
-				C426AF6D1F410C8D00BD5DD3 /* Cells */,
 			);
 			name = Parallax;
 			sourceTree = "<group>";
@@ -756,6 +769,7 @@
 				C4B576C91F3E799500F73F0F /* IOStickyHeaderFlowLayoutAttributes.swift in Sources */,
 				C4BB99B81F3E25B7007497C0 /* AutoTextView.swift in Sources */,
 				C4BB99FA1F3E25B7007497C0 /* SpringTextView.swift in Sources */,
+				C4560CE11F41D57100076F1D /* aboveHeaderCollectionViewCell.swift in Sources */,
 				C4BB99BE1F3E25B7007497C0 /* DesignableButton.swift in Sources */,
 				C426AF771F41235A00BD5DD3 /* StickyHeaderCollectionViewFlowLayout.swift in Sources */,
 				C4561DFD1F0AE5020037CB1C /* ViewController.swift in Sources */,
@@ -803,6 +817,7 @@
 				C40AC7E81F1D53C100C80277 /* WeTeamUp.xcdatamodeld in Sources */,
 				C4BB99C51F3E25B7007497C0 /* DesignableLabel.swift in Sources */,
 				C4BB99EC1F3E25B7007497C0 /* SpringAnimation.swift in Sources */,
+				C4560CE21F41D57100076F1D /* aboveHeaderCollectionViewCell.swift in Sources */,
 				C479A1E21F32618E00CA36E7 /* Constants.swift in Sources */,
 				C4BB99DD1F3E25B7007497C0 /* LoadingView.swift in Sources */,
 				C426AF711F410CDD00BD5DD3 /* subHeaderCollectionViewCell.swift in Sources */,
@@ -850,6 +865,7 @@
 				C40AC7E91F1D53C200C80277 /* WeTeamUp.xcdatamodeld in Sources */,
 				C4BB99C61F3E25B7007497C0 /* DesignableLabel.swift in Sources */,
 				C4BB99ED1F3E25B7007497C0 /* SpringAnimation.swift in Sources */,
+				C4560CE31F41D57100076F1D /* aboveHeaderCollectionViewCell.swift in Sources */,
 				C479A1E31F32618E00CA36E7 /* Constants.swift in Sources */,
 				C4BB99DE1F3E25B7007497C0 /* LoadingView.swift in Sources */,
 				C426AF721F410CDD00BD5DD3 /* subHeaderCollectionViewCell.swift in Sources */,
