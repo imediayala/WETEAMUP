@@ -69,6 +69,7 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         
  
 //        // TEST MESSAGE
+   
 //        let user = Auth.auth().currentUser
 //        self.refUser.child("users").child((user?.uid)!).setValue(["username": user?.displayName])
 //        self .sendMessage(withData: ["description" : "HOLA"])
@@ -137,7 +138,8 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
             print("End of code. The image will continue downloading in the background and it will be loaded when it ends.")
             
             aboveHeaderCell.alpha = 0
-            UIView.animate(withDuration: 2, animations: { self.aboveHeaderCell.alpha = 1 })
+            UIView.animate(withDuration: 1, animations: { self.aboveHeaderCell.alpha = 1 })
+            aboveHeaderCell.frame.size = CGSize(width:390 , height:200)
 
             return aboveHeaderCell
 
@@ -161,9 +163,9 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
             if let photoURL = message[Constants.MessageFields.photoURL], let URL = URL(string: photoURL),
                 let data = try? Data(contentsOf: URL) {
                 cell.imageBoxCell?.image = UIImage(data: data)
-                
             }
-            
+            cell.frame.size = CGSize(width:360 , height:250)
+
             return cell
 
         }
@@ -173,10 +175,11 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    
+        let pt1 = CGPoint(x: 360, y: 500)
+
 //    for cell in collectionCards.visibleCells as [UICollectionViewCell] {
         if didLoadCellHeader == true {
-            let point = aboveHeaderCell.convert(collectionCards.center, to: collectionCards.superview)
+            let point = aboveHeaderCell.convert(pt1, to: collectionCards.superview)
             aboveHeaderCell.alpha = ((point.y * 100) / collectionCards.bounds.maxY) / 100
         }
    
@@ -201,10 +204,10 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
      
         if indexPath == IndexPath(item: 0, section: 0) {
 
-        return CGSize(width:355 , height:200)
+        return CGSize(width:390 , height:200)
             
         }
-        return CGSize(width:355 , height:350)
+        return CGSize(width:360 , height:250)
     }
 
     
@@ -213,7 +216,7 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         // if section is above search bar we need to make its height 0
         if section == 0 {
-            return CGSize(width: 0, height: 0)
+            return CGSize(width: 10, height: -20)
             //            return CGSize(width: collectionView.frame.width, height: 50)
             
         }
@@ -228,7 +231,11 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
     }
-    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+          if indexPath == IndexPath(item: 1, section: 2) {
+            print("do something")
+        }
+    }
     
     //FIREBASE DATABASE
     
