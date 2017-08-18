@@ -13,14 +13,14 @@ import Photos
 
 
 
-class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout {
+class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout,PostButtonDelegate {
 
     @IBOutlet var masterView: SpringView!
     @IBOutlet weak var stretchyView: SpringView!
     @IBOutlet weak var collectionCards: UICollectionView!
     @IBOutlet weak var objFromLogin: UILabel!
     @IBOutlet weak var aboveHeaderCell: aboveHeaderCollectionViewCell!
-    @IBOutlet weak var gluedCellHeader: UICollectionReusableView!
+    @IBOutlet weak var gluedCellHeader: belowHeaderStickyCollectionReusableView!
     @IBOutlet var stringLogin: String!
     var posts: [DataSnapshot]! = []
     var refUser: DatabaseReference!
@@ -30,6 +30,9 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
 
 
 
+    func collectionViewCellDidTapPost(_ sender: belowHeaderStickyCollectionReusableView) {
+        print("PostButtonDelegate OK")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -192,8 +195,11 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         // returning the search bar for header
         
         
-         gluedCellHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headersection", for: indexPath)
+         gluedCellHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headersection", for: indexPath) as! belowHeaderStickyCollectionReusableView
+        
+        gluedCellHeader.delegate = self
 
+        
         return gluedCellHeader
     }
     
@@ -231,6 +237,7 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
     }
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
           if indexPath == IndexPath(item: 1, section: 2) {
             print("do something")

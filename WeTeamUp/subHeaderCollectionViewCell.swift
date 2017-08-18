@@ -10,6 +10,10 @@ import UIKit
 
 class subHeaderCollectionViewCell: UICollectionViewCell {
 
+    @IBAction func postActionButton(_ sender: Any) {
+        
+        print("button tapped")
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

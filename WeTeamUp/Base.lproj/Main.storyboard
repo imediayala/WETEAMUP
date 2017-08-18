@@ -240,7 +240,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="center" preservesSuperviewLayoutMargins="YES" reuseIdentifier="headersection" id="Aw7-8q-qRZ">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="center" preservesSuperviewLayoutMargins="YES" reuseIdentifier="headersection" id="Aw7-8q-qRZ" customClass="belowHeaderStickyCollectionReusableView" customModule="WeTeamUp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -250,6 +250,9 @@
                                                 <constraint firstAttribute="width" constant="28" id="fa5-9S-vUe"/>
                                             </constraints>
                                             <state key="normal" image="Group 5"/>
+                                            <connections>
+                                                <action selector="postActionButton:" destination="Aw7-8q-qRZ" eventType="touchUpInside" id="kZT-Mb-GMy"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headrbar" translatesAutoresizingMaskIntoConstraints="NO" id="Cwe-UJ-HHr">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
