@@ -21,6 +21,7 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
     @IBOutlet weak var objFromLogin: UILabel!
     @IBOutlet weak var aboveHeaderCell: aboveHeaderCollectionViewCell!
     @IBOutlet weak var gluedCellHeader: belowHeaderStickyCollectionReusableView!
+    @IBOutlet weak var cardCell: HomeCardsCollectionViewCell!
     @IBOutlet var stringLogin: String!
     var posts: [DataSnapshot]! = []
     var refUser: DatabaseReference!
@@ -32,6 +33,13 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
 
     func collectionViewCellDidTapPost(_ sender: belowHeaderStickyCollectionReusableView) {
         print("PostButtonDelegate OK")
+        
+        
+        UIView.animate(withDuration: 0.3, animations: {self.collectionCards.scrollToItem(at:IndexPath(item: 1, section: 1), at: .bottom, animated: false)
+ })
+        gluedCellHeader.backgroundColor = UIColor.white
+
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,7 +150,7 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
             
             aboveHeaderCell.alpha = 0
             UIView.animate(withDuration: 1, animations: { self.aboveHeaderCell.alpha = 1 })
-            aboveHeaderCell.frame.size = CGSize(width:390 , height:200)
+//            aboveHeaderCell.frame.size = CGSize(width:390 , height:200)
 
             return aboveHeaderCell
 
@@ -150,26 +158,26 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         } else {
         // below search cell
             
-            let cell : HomeCardsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardcell", for: indexPath) as! HomeCardsCollectionViewCell
+             cardCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardcell", for: indexPath) as! HomeCardsCollectionViewCell
 //            // Unpack message from Firebase DataSnapshot
             let messageSnapshot = self.posts[indexPath.row]
-            guard let message = messageSnapshot.value as? [String: String] else { return cell }
+            guard let message = messageSnapshot.value as? [String: String] else { return cardCell }
             let name = message[Constants.MessageFields.name] ?? ""
             let text = message[Constants.MessageFields.text] ?? ""
             //        cell.labelName?.text = name + ": " + text
             //        cell.labelDescription?.text = name + ": " + text
-            cell.labelName?.text = name
-            cell.labelDescription?.text = text
-            cell.imageBoxCell?.image = UIImage(named: "ic_account_circle")
+            cardCell.labelName?.text = name
+            cardCell.labelDescription?.text = text
+            cardCell.imageBoxCell?.image = UIImage(named: "ic_account_circle")
             
             // DOWNLOAD IMAGE
             if let photoURL = message[Constants.MessageFields.photoURL], let URL = URL(string: photoURL),
                 let data = try? Data(contentsOf: URL) {
-                cell.imageBoxCell?.image = UIImage(data: data)
+                cardCell.imageBoxCell?.image = UIImage(data: data)
             }
-            cell.frame.size = CGSize(width:360 , height:250)
+//            cell.frame.size = CGSize(width:360 , height:250)
 
-            return cell
+            return cardCell
 
         }
         
@@ -178,7 +186,7 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pt1 = CGPoint(x: 360, y: 500)
+        let pt1 = CGPoint(x: collectionCards.frame.size.width, y: 500)
 
 //    for cell in collectionCards.visibleCells as [UICollectionViewCell] {
         if didLoadCellHeader == true {
@@ -209,11 +217,14 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
      
         if indexPath == IndexPath(item: 0, section: 0) {
-
-        return CGSize(width:390 , height:200)
+            let aboveWidth = collectionCards.frame.size.width
+            let adjust: CGFloat = 40
+            let aboveWidthAdjust = aboveWidth - adjust
+            
+        return CGSize(width:collectionCards.frame.size.width , height:200)
             
         }
-        return CGSize(width:360 , height:250)
+        return CGSize(width:collectionCards.frame.size.width , height:250)
     }
 
     
@@ -222,7 +233,7 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         // if section is above search bar we need to make its height 0
         if section == 0 {
-            return CGSize(width: 10, height: -20)
+            return CGSize(width: 0, height: 0)
             //            return CGSize(width: collectionView.frame.width, height: 50)
             
         }
@@ -238,10 +249,21 @@ class TeamHomeViewController: UIViewController,UICollectionViewDelegate,UICollec
         print("You selected cell #\(indexPath.item)!")
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-          if indexPath == IndexPath(item: 1, section: 2) {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath){
+        let viewBelow  = belowHeaderStickyCollectionReusableView()
+        
+          if indexPath == IndexPath(item: 2, section: 1) {
             print("do something")
+//            UIView.animate(withDuration: 1, animations: {  viewBelow.searchHomeView.backgroundColor = UIColor.red })
+
         }
+        
+        if indexPath == IndexPath(item: 0, section: 0) {
+            print("do something else")
+        }
+            
+        print(indexPath)
+
     }
     
     //FIREBASE DATABASE

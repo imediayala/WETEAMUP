@@ -13,7 +13,9 @@ protocol PostButtonDelegate : class {
 }
 
 class belowHeaderStickyCollectionReusableView: UICollectionReusableView {
-    
+    @IBOutlet var searchBarHome: UISearchBar!
+ 
+    @IBOutlet var searchHomeView: UIView!
     weak var delegate: PostButtonDelegate?
     
     @IBAction func postActionButton(_ sender: Any) {

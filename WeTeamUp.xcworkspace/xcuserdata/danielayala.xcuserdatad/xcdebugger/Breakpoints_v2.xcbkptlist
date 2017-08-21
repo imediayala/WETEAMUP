@@ -10,12 +10,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeTeamUp/TeamHomeViewController.swift"
-            timestampString = "524779255.109543"
+            timestampString = "524960098.328645"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "collectionViewCellDidTapPost(_:)"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "collectionView(_:willDisplay:forItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeTeamUp.TeamHomeViewController.collectionView (__ObjC.UICollectionView, willDisplay : __ObjC.UICollectionViewCell, forItemAt : Foundation.IndexPath) -&gt; ()"
+                  moduleName = "WeTeamUp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielayala/DEVELOPMENT/XcodeSwift/WeTeamUp/WeTeamUp/TeamHomeViewController.swift"
+                  timestampString = "524782187.865879"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "244"
+                  endingLineNumber = "244"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeTeamUp.TeamHomeViewController.(collectionView (__ObjC.UICollectionView, willDisplay : __ObjC.UICollectionViewCell, forItemAt : Foundation.IndexPath) -&gt; ()).(closure #1)"
+                  moduleName = "WeTeamUp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielayala/DEVELOPMENT/XcodeSwift/WeTeamUp/WeTeamUp/TeamHomeViewController.swift"
+                  timestampString = "524782187.867465"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "244"
+                  endingLineNumber = "244"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeTeamUp/TeamHomeViewController.swift"
+            timestampString = "524960098.328645"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
+            landmarkName = "collectionView(_:willDisplay:forItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

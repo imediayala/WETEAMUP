@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,25 +19,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="380" height="250"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatarimagecell" translatesAutoresizingMaskIntoConstraints="NO" id="ZGG-zN-EmB">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarimagecell" translatesAutoresizingMaskIntoConstraints="NO" id="ZGG-zN-EmB">
                         <rect key="frame" x="-5" y="0.0" width="390" height="260"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ZGG-zN-EmB" secondAttribute="height" multiplier="3:2" id="uvA-Vt-9zm"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhF-E6-Dkf">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhF-E6-Dkf">
                         <rect key="frame" x="67" y="20" width="149" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="149" id="hf3-vq-oIf"/>
+                            <constraint firstAttribute="height" constant="21" id="vjs-3N-gOy"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ya8-kl-ojr">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ya8-kl-ojr">
                         <rect key="frame" x="12" y="20" width="42" height="40"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="6W4-p9-ubZ"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGj-Aa-hlq">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGj-Aa-hlq">
                         <rect key="frame" x="14" y="68" width="154" height="25"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="154" id="TdE-qq-58Z"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -44,6 +54,19 @@
                 </subviews>
             </view>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ZGG-zN-EmB" secondAttribute="bottom" constant="-10" id="APA-7T-7an"/>
+                <constraint firstItem="ya8-kl-ojr" firstAttribute="top" secondItem="dhF-E6-Dkf" secondAttribute="top" id="GoK-6t-H8Z"/>
+                <constraint firstItem="ZGG-zN-EmB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="R7K-HA-wDA"/>
+                <constraint firstItem="ya8-kl-ojr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="SOj-0L-nB8"/>
+                <constraint firstItem="KGj-Aa-hlq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="14" id="Sd9-QQ-f3n"/>
+                <constraint firstItem="ZGG-zN-EmB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="-5" id="XLn-bH-0bb"/>
+                <constraint firstItem="ya8-kl-ojr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="gwy-6b-iMb"/>
+                <constraint firstItem="KGj-Aa-hlq" firstAttribute="top" secondItem="dhF-E6-Dkf" secondAttribute="bottom" constant="27" id="iUS-RS-gRU"/>
+                <constraint firstItem="dhF-E6-Dkf" firstAttribute="leading" secondItem="ya8-kl-ojr" secondAttribute="trailing" constant="13" id="j8b-zZ-E3J"/>
+                <constraint firstItem="ZGG-zN-EmB" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="lVN-wH-xE8"/>
+                <constraint firstItem="KGj-Aa-hlq" firstAttribute="top" secondItem="ya8-kl-ojr" secondAttribute="bottom" constant="8" symbolic="YES" id="xUU-mv-iaQ"/>
+            </constraints>
             <size key="customSize" width="325" height="78"/>
             <connections>
                 <outlet property="imageBoxCell" destination="ya8-kl-ojr" id="aqd-d5-F3R"/>
